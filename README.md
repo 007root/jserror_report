@@ -27,3 +27,6 @@ server {
 }
 ```
 
+# 界面显示
+
+![_20181017091650](https://user-images.githubusercontent.com/20102314/47056158-a7f36280-d1ed-11e8-9cd4-ae8bc8eae1fe.png)
