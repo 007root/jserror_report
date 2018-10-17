@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="/src/js/vue.js"></script>
+    <script src="/src/js/axios.min.js"></script>
+    <link href="/src/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<body>
+<style>
+    .div1{
+        position:absolute;
+        right:0.5%;
+        top:0.5%;
+    }
+    .nav>li>a.yydmz{
+        padding: 10px 50px;
+    }
+</style>
+<div id="myTabContent">
+
+        <!-- select --!>
+        <div role="tabpanel" class="tab-pane" id="infoTab">
+            <table class="table table-hover table-bordered" style="word-wrap:break-word; word-break:break-all;
+">
+                <tbody>
+                    <slot name="ths">
+                    <tr slot="ths">
+                        <th style="width:8vw">Time</th>
+                        <th style="width:4vw">User Id</th>
+                        <th style="width:7vw">IP</th>
+                        <th>URL</th>
+                        <th>Error</th>
+                        <th>Stack</th>
+                        <th nowrap="nowrap">Message</th>
+                        <th nowrap="nowrap">Column</th>
+                        <th>Referer</th>
+                        <th>Agent</th>
+                        <th nowrap="nowrap">LineNo</th>
+                        <th nowrap="nowrap">UId</th>
+                    </tr>
+                    <tr v-for="value in object">
+                        <td> {{ value.create_time }}</td>
+                        <td> {{ value.user_id }}</td>
+                        <td> {{ value.ip }}</td>
+                        <td> {{ value.url }}</td>
+                        <td> {{ value.error }}</td>
+                        <td> {{ value.stack }}</td>
+                        <td> {{ value.message }}</td>
+                        <td> {{ value.column }}</td>
+                        <td> {{ value.referer }}</td>
+                        <td> {{ value.agent }}</td>
+                        <td> {{ value.lineno }}</td>
+                        <td> {{ value.uid }}</td>
+                    </tr>
+                    </slot>
+                </tbody>
+            </table>
+        </div>
+
+        <ul class="pager">
+           <li><a href="#" v-on:click="selectInfo()">首页</a></li>
+           <li><a href="#" v-on:click="selectInfo('front', uid)">&laquo;上一页</a></li>
+           <li><a href="#" v-on:click="selectInfo('back', uid)">下一页&raquo;</a></li>
+        </ul>
+</div>
+
+</body>
+<script src="/src/js/main.js"></script>
+<script src="/src/js/jquery.min.js"></script>
+<script src="/src/js/bootstrap.min.js"></script>
+</html>
